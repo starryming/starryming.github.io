@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="http://yoursite.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="http://yoursite.com">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="http://yoursite.com">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>nginx服务器搭建 - Hexo</title>
+
+<meta name="keywords" content>
+
+<meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Jim">Jim</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">starryming</h1>
+        <h3 class="cover-siteTitle"></h3>
+        <p class="cover-siteDesc"></p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/starryming/" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">Recent Posts</a></li>
+        
+            
+                <li class>
+                    <a href="/categories/technology" data-name="技术">技术</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/humanities" data-name="人文">人文</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/others" data-name="其他">其他</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://starryming.github.io" target="_blank">
+                    <img width="48" src="/images/timg.jpg" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://starryming.github.io" target="_blank">Jim</a>
+                    <span title="Last edited at&nbsp;2019-03-05">2019-03-05</span>
+                </p>
+                <p>starryming</p>
+            </div>
+            <h2 class="post-title">Nginx服务器搭建</h2>
+            <div class="post-meta">
+                emm... 2094 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h1 id="Nginx服务器搭建-图片服务器"><a href="#Nginx服务器搭建-图片服务器" class="headerlink" title="Nginx服务器搭建 / 图片服务器"></a>Nginx服务器搭建 / 图片服务器</h1><p>参考 <a href="https://blog.csdn.net/CSDN_LQR/article/details/53334583" target="_blank" rel="noopener">https://blog.csdn.net/CSDN_LQR/article/details/53334583</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Nginx:</span><br><span class="line">ftpuser</span><br><span class="line">qweQWE123456</span><br></pre></td></tr></table></figure>
+<h2 id="一、搭建Ngnix"><a href="#一、搭建Ngnix" class="headerlink" title="一、搭建Ngnix"></a>一、搭建Ngnix</h2><h4 id="1、nginx安装环境"><a href="#1、nginx安装环境" class="headerlink" title="1、nginx安装环境"></a>1、nginx安装环境</h4><h5 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++ 	<span class="comment">// gcc 编译依赖gcc环境</span></span><br></pre></td></tr></table></figure>
+<h5 id="PCRE"><a href="#PCRE" class="headerlink" title="PCRE"></a>PCRE</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y pcre pcre-devel		<span class="comment">// Perl库 nginx的http模块使用pcre来解析正则表达式</span></span><br></pre></td></tr></table></figure>
+<h5 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y zlib zlib-devel		<span class="comment">// nginx使用zlib对http包的内容进行gzip</span></span><br></pre></td></tr></table></figure>
+<h5 id="openssl"><a href="#openssl" class="headerlink" title="openssl"></a>openssl</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br><span class="line"><span class="comment">/*OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。*/</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="2、编译安装"><a href="#2、编译安装" class="headerlink" title="2、编译安装"></a>2、编译安装</h4><h5 id="tar-gz上传-usr"><a href="#tar-gz上传-usr" class="headerlink" title="tar.gz上传 /usr/"></a>tar.gz上传 /usr/</h5><h5 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.8.0.tar.gz</span><br><span class="line">cd nginx-1.8.0</span><br></pre></td></tr></table></figure>
+<h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新开一个连接窗口</span></span><br><span class="line">cd /<span class="keyword">var</span></span><br><span class="line">mkdir temp</span><br><span class="line">cd /temp</span><br><span class="line">mkdir nginx</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*回原窗口执行下面命令*/</span></span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--pid-path=/<span class="keyword">var</span>/run/nginx/nginx.pid \</span><br><span class="line">--lock-path=/<span class="keyword">var</span>/lock/nginx.lock \</span><br><span class="line">--error-log-path=/<span class="keyword">var</span>/log/nginx/error.log \</span><br><span class="line">--http-log-path=/<span class="keyword">var</span>/log/nginx/access.log \</span><br><span class="line">--with-http_gzip_static_module \</span><br><span class="line">--http-client-body-temp-path=/<span class="keyword">var</span>/temp/nginx/client \</span><br><span class="line">--http-proxy-temp-path=/<span class="keyword">var</span>/temp/nginx/proxy \</span><br><span class="line">--http-fastcgi-temp-path=/<span class="keyword">var</span>/temp/nginx/fastcgi \</span><br><span class="line">--http-uwsgi-temp-path=/<span class="keyword">var</span>/temp/nginx/uwsgi \</span><br><span class="line">--http-scgi-temp-path=/<span class="keyword">var</span>/temp/nginx/scgi！</span><br></pre></td></tr></table></figure>
+<h5 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">make	<span class="comment">// 编译</span></span><br><span class="line">make  install	<span class="comment">// 安装</span></span><br><span class="line"></span><br><span class="line">cd /usr/local/nginx</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
+<h5 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin</span><br><span class="line">./nginx		<span class="comment">// 运行</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、相关命令"><a href="#3、相关命令" class="headerlink" title="3、相关命令"></a>3、相关命令</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin</span><br><span class="line"></span><br><span class="line"><span class="comment">/*停止*/</span></span><br><span class="line">./nginx -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment">/*重启*/</span></span><br><span class="line">./nginx -s quit</span><br><span class="line">./nginx</span><br><span class="line"></span><br><span class="line"><span class="comment">/*重新加载配置文件*/</span></span><br><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+<h4 id="4、外部访问"><a href="#4、外部访问" class="headerlink" title="4、外部访问"></a>4、外部访问</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=<span class="keyword">public</span> --add-port=<span class="number">80</span>/tcp --permanent 	<span class="comment">// 开发80端口</span></span><br><span class="line">systemctl stop firewalld.service 	<span class="comment">// 重启防火墙</span></span><br><span class="line">systemctl start firewalld.service </span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">	http://129.204.123.212/ 	</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、搭建vsftp"><a href="#二、搭建vsftp" class="headerlink" title="二、搭建vsftp"></a>二、搭建vsftp</h2><p><a href="https://blog.csdn.net/csdn_lqr/article/details/53333946" target="_blank" rel="noopener">搭建参考</a></p>
+<h2 id="三、搭建Nginx图片服务器"><a href="#三、搭建Nginx图片服务器" class="headerlink" title="三、搭建Nginx图片服务器"></a>三、搭建Nginx图片服务器</h2><h4 id="1、nginx-html下创建images文件夹"><a href="#1、nginx-html下创建images文件夹" class="headerlink" title="1、nginx/html下创建images文件夹"></a>1、nginx/html下创建images文件夹</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/nginx/html/image</span><br></pre></td></tr></table></figure>
+<h4 id="2、修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径"><a href="#2、修改nginx-conf-nginx-conf在默认的server里再添加一个location并指定实际路径" class="headerlink" title="2、修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:"></a>2、修改nginx/conf/nginx.conf在默认的server里再添加一个location并指定实际路径:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    root html;</span><br><span class="line">    index index.html index.htm;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 添加下面</span></span><br><span class="line">location /images/ &#123;</span><br><span class="line">    root  /home/ftpuser/www/;</span><br><span class="line">    autoindex on;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1)root则是将images映射到/home/ftpuser/www/images/ </span></span><br><span class="line"><span class="comment">2)autoindex on便是打开浏览功能。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、重启nginx"><a href="#3、重启nginx" class="headerlink" title="3、重启nginx"></a>3、重启nginx</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx 0s reload</span><br></pre></td></tr></table></figure>
+<h4 id="4、修改用户访问权限"><a href="#4、修改用户访问权限" class="headerlink" title="4、修改用户访问权限"></a>4、修改用户访问权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown ftpuser /home/ftpuser</span><br><span class="line">chmod 777 -R /home/ftpuser</span><br></pre></td></tr></table></figure>
+<h4 id="5、测试"><a href="#5、测试" class="headerlink" title="5、测试"></a>5、测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">放一张图片于 /home/ftpuser/www/images</span><br><span class="line"></span><br><span class="line">http://129.204.123.212/images/Simple-Order.png</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/linus/">linus</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help">Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://starryming.github.io" target="_blank" rel="friend">Jim</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="Input query keywords here...">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
