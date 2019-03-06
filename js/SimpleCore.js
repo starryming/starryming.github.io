@@ -737,8 +737,8 @@ var SimpleCore = {
             $('body').removeClass('night-mode');
             btn.find('i').attr('class', 'fa fa-sun-o');
             $(".cover-img").css({
-                'background': "url('/images/walk.png')",
-                'background-image': '/images/walk.png',
+                'background': "url('https://ws1.sinaimg.cn/large/006f2SyGgy1g0ssaq74a5j30fx0o6qlb.jpg')",
+                'background-image': 'url(https://ws1.sinaimg.cn/large/006f2SyGgy1g0ssaq74a5j30fx0o6qlb.jpg)',
                 'background-size': 'cover',
                 'background-position': 'center',
                 'background-repeat': 'no-repeat'
