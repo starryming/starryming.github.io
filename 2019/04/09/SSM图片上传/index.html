@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://starryming.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://starryming.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://starryming.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://starryming.github.io">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://starryming.github.io">
+<meta name="author" content="Jima">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>ssm图片上传 - blog</title>
+
+<meta name="keywords" content="java">
+
+<meta name="description " content="SSM图片上传">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Jim">Jim</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">starryming</h1>
+        <h3 class="cover-siteTitle"></h3>
+        <p class="cover-siteDesc"></p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/starryming/" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最近</a></li>
+        
+            
+                <li class>
+                    <a href="/categories/technology" data-name="技术">技术</a>
+                </li>
+            
+                <li class>
+                    <a href="/categories/others" data-name="其他">其他</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="读物检索~">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://starryming.github.io" target="_blank">
+                    <img width="48" src="/images/timg.jpg" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="https://starryming.github.io" target="_blank">Jim</a>
+                    <span title="最后编辑于&nbsp;2019-04-09">2019-04-09</span>
+                </p>
+                <p>starryming</p>
+            </div>
+            <h2 class="post-title">SSM图片上传</h2>
+            <div class="post-meta">
+                本文共计4156个字 |
+                您是第&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="SSM图片上传"><a href="#SSM图片上传" class="headerlink" title="SSM图片上传"></a>SSM图片上传</h2><h3 id="1、相关配置"><a href="#1、相关配置" class="headerlink" title="1、相关配置"></a>1、相关配置</h3><h4 id="Pom依赖"><a href="#Pom依赖" class="headerlink" title="Pom依赖"></a>Pom依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 文件上传的jar包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="SpringMvc的配置类-图片文件解析器，及一些参数"><a href="#SpringMvc的配置类-图片文件解析器，及一些参数" class="headerlink" title="SpringMvc的配置类(图片文件解析器，及一些参数)"></a>SpringMvc的配置类(图片文件解析器，及一些参数)</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 文件上传配置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipartResolver"</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 默认编码 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultEncoding"</span> <span class="attr">value</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 上传文件大小限制为31M，31*1024*1024 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxUploadSize"</span> <span class="attr">value</span>=<span class="string">"32505856"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 内存中的最大值 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxInMemorySize"</span> <span class="attr">value</span>=<span class="string">"4096"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Tomcat配置虚拟访问路径-物理存放路径的映射-gt-用于映射请求"><a href="#Tomcat配置虚拟访问路径-物理存放路径的映射-gt-用于映射请求" class="headerlink" title="Tomcat配置虚拟访问路径/物理存放路径的映射 =&gt; 用于映射请求"></a>Tomcat配置虚拟访问路径/物理存放路径的映射 =&gt; 用于映射请求</h4><p><img src="https://ws1.sinaimg.cn/large/006f2SyGgy1g1w5w3pqbtj30tx0ky75o.jpg" alt></p>
+<h3 id="2、代码部分"><a href="#2、代码部分" class="headerlink" title="2、代码部分"></a>2、代码部分</h3><h4 id="上传图片工具类-PictureUtil-java"><a href="#上传图片工具类-PictureUtil-java" class="headerlink" title="上传图片工具类 PictureUtil.java"></a>上传图片工具类 PictureUtil.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PictureUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(PictureUtil.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String CODES = <span class="string">"0123456789"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> NUM = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存入图片文件于本地</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> picturePath  路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> picture 图片流</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> pictureName</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">insertPicture</span><span class="params">(String picturePath, MultipartFile picture)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 获取路径</span></span><br><span class="line">        String path = Objects.requireNonNull(ClassUtils.getDefaultClassLoader().getResource(<span class="string">""</span>)).getPath() + <span class="string">"static/"</span> + picturePath + <span class="string">'/'</span>;</span><br><span class="line">        logger.info(path);</span><br><span class="line">        <span class="keyword">if</span> (picture.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取文件名</span></span><br><span class="line">        String pictureName = picture.getOriginalFilename();</span><br><span class="line">        logger.info(<span class="string">"接收到的文件名为："</span> + pictureName);</span><br><span class="line">        <span class="comment">// 获取文件的后缀名</span></span><br><span class="line">        String suffixName = pictureName.substring(pictureName.lastIndexOf(<span class="string">"."</span>));</span><br><span class="line">        logger.info(<span class="string">"获取后缀："</span> + suffixName);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 随机图片名</span></span><br><span class="line">        pictureName = generateVerifyCode(NUM,CODES) + suffixName;</span><br><span class="line">        File dest = <span class="keyword">new</span> File(path, pictureName);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 检测是否存在目录</span></span><br><span class="line">        <span class="keyword">if</span> (!dest.getParentFile().exists()) &#123;</span><br><span class="line">            dest.getParentFile().mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            picture.transferTo(dest);</span><br><span class="line">            logger.info(<span class="string">"上传成功后的文件路径："</span> + path + pictureName);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalStateException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pictureName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 使用指定源生成验证码</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> verifySize 验证码长度</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sources    验证码字符源</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">generateVerifyCode</span><span class="params">(<span class="keyword">int</span> verifySize, String sources)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> codesLen = sources.length();</span><br><span class="line">        Random rand = <span class="keyword">new</span> Random(System.currentTimeMillis());</span><br><span class="line">        StringBuilder verifyCode = <span class="keyword">new</span> StringBuilder(verifySize);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; verifySize; i++) &#123;</span><br><span class="line">            verifyCode.append(sources.charAt(rand.nextInt(codesLen - <span class="number">1</span>)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> verifyCode.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="控制层图片上传"><a href="#控制层图片上传" class="headerlink" title="控制层图片上传"></a>控制层图片上传</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/picture"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PictureController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(PictureController.class);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 图片上传target</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> image 头像文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> id 用户id</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> java.lang.String</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/upload/&#123;id&#125;"</span>, method = RequestMethod.POST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">upload</span><span class="params">(@RequestParam(<span class="string">"image"</span>)</span> MultipartFile image, @PathVariable <span class="keyword">int</span> id) </span>&#123;</span><br><span class="line">        String path = <span class="string">"image/user"</span>;</span><br><span class="line">        <span class="comment">// 保存图片与本地</span></span><br><span class="line">        String name = PictureUtil.insertPicture(path, image);</span><br><span class="line">        <span class="keyword">if</span> (name == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 保存本地失败</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"fail"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String imageUrl = <span class="string">"image/user/"</span> + name;</span><br><span class="line">        <span class="comment">// TODO 根据id更新 用户头像</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"http://localhost:8080/"</span>+imageUrl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、Postman测试图片上传"><a href="#3、Postman测试图片上传" class="headerlink" title="3、Postman测试图片上传"></a>3、Postman测试图片上传</h3><p>postman模拟上传图片：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006f2SyGgy1g1w6nrle61j30od0bjjs6.jpg" alt></p>
+<p>本地存储结果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006f2SyGgy1g1w6fo2nujj307o0bqmx8.jpg" alt></p>
+<p>浏览器直接访问：<a href="http://localhost:8080/image/user/25042.jpg" target="_blank" rel="noopener">http://localhost:8080/image/user/25042.jpg</a> 可查看效果</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/java/">java</a>
+            
+        </div>
+        
+    </article>
+    
+    <p style="text-align: center">本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="关于">关于</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="帮助">帮助</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友链">友链</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="地图">地图</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="请输入查询关键词">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
